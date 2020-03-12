@@ -1,30 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'carousel_image_cards.dart';
+import 'discover_group_card.dart';
 
 void main() => runApp( MyApp());
 
 class MyApp extends StatelessWidget{
-  static const String _title = 'Ceangail NUIG';
+  static const String _title = 'Ceangal NUIG';
 
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       title: _title,
-      theme: ThemeData(fontFamily: 'SourceCodePro'),
-      home: CeangailSocialWidget(),
+      theme: ThemeData(fontFamily: 'Roboto'),
+      home: CeangalSocialWidget(),
     ); //MaterialApp
   }
 }
 
-
-class CeangailSocialWidget extends StatefulWidget{
-  CeangailSocialWidget({Key key}) : super (key: key);
-
+class CeangalSocialWidget extends StatefulWidget{
+  CeangalSocialWidget({Key key}) : super (key: key);
   @override
-  _CeangailSocialWidget createState() => _CeangailSocialWidget();
+  _CeangalSocialWidget createState() => _CeangalSocialWidget();
 }
 
 
-class _CeangailSocialWidget extends State<CeangailSocialWidget> {
+
+
+
+
+
+
+class _CeangalSocialWidget extends State<CeangalSocialWidget> {
+  int _selectedIndex = 2;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +51,7 @@ class _CeangailSocialWidget extends State<CeangailSocialWidget> {
               ),
               children : [
                 TextSpan(
-                  text: "Ceangail ",
+                  text: "Ceangal ",
                   style: TextStyle(
                     color: Colors.white,
                     fontStyle: FontStyle.italic,
@@ -60,100 +75,103 @@ class _CeangailSocialWidget extends State<CeangailSocialWidget> {
 
 
       body: Container(
-        padding: EdgeInsets.fromLTRB(10, 20, 10, 70),
+        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded( //TOP HORIZONTAL CONTAINER
-              flex: 2,
-              child: Container(
-                color: Colors.pink,
-                child: Column(
-                  children: <Widget>[
-                    Text('Active Groups'),
-                    Container(
-                      child: Expanded(
-                        child: Image(
-                          image: AssetImage('assets/images/cow.jpg'),
-                        ),
-                      ),
-                    )
-                  ]
-                )
-              ),
-            ),
-            Expanded( // BOTTOM HORIZONTAL CONTAINER
-              flex: 3,
-              child: Container(
-                  color: Colors.green,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded( //LHS VERTICAL-BOTTOM CONTAINER
-                        flex: 2,
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(15, 10, 15, 20),
-                          color: Colors.cyan,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Expanded(
-                                flex: 2,
-                                child: Image(
-                                  image: AssetImage('assets/images/cheese.jpg')
-                                ),
-                              ),
-                              SizedBox(height:15),
-                              Expanded(
-                                flex: 2,
-                                child: Image(
-                                    image: AssetImage('assets/images/druggo.png')
-                                ),
-                              ),
-                            ],
-                          )
-                        )
-                      ),
-                      Expanded( //RHS VERTICAL-BOTTOM CONTAINER
-                        flex: 2,
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(15, 10, 15, 20),
-                          color: Colors.blueAccent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Expanded(
-                                flex: 2,
-                                child: Image(
-                                  image: AssetImage('assets/images/etin.png')
-                                ),
-                              ),
-                              SizedBox(height:15),
-                              Expanded(
-                                flex: 2,
-                                child: Image(
-                                    image: AssetImage('assets/images/oran_cans.png')
-                                ),
-                              )
 
-                            ],
-                          )
-                        )
-                      )
-                    ],
-                  )
+            Expanded( //TOP HORIZONTAL CONTAINER
+              flex: 3,
+                child: CarouselSlider(
+                  items: [
+                    CarouselCard(),
+                    CarouselCard(),
+                    CarouselCard(),
+                  ],
+                  initialPage: 1,
+                  aspectRatio: 16/9,
+                  autoPlay: false,
+                  viewportFraction: 1.0,
+                  //autoPlayInterval: Duration(seconds: 3),
+                  //autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  enlargeCenterPage: true,
+                  scrollDirection: Axis.horizontal,
+                ),
+            ),
+
+            Expanded( // BOTTOM HORIZONTAL CONTAINER
+              flex: 4,
+              child: CustomScrollView(
+                slivers: <Widget>[
+                  SliverGrid(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200.0,
+                      mainAxisSpacing: 10.0,
+                      crossAxisSpacing: 10.0,
+                      childAspectRatio: 0.88,
+                    ),
+                    delegate: SliverChildListDelegate(
+                      [
+                        GroupCard(),
+                        GroupCard(),
+                        GroupCard(),
+                        GroupCard(),
+                        GroupCard(),
+                        GroupCard(),
+                        GroupCard(),
+                      ]
+                    )
+                  ),
+                ],
               )
             )
           ]
         )
-      )
+      ),
+
+
+    bottomNavigationBar: BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          title: Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          title: Text('Dating'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.business),
+          title: Text('Social'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          title: Text('Profile'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.attach_money),
+          title: Text('Coupons'),
+        ),
+
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.amber[800],
+      onTap: _onItemTapped,
+      type : BottomNavigationBarType.fixed,
+    ),
+
+
+
 
 
 
     );
   }
 }
+
+
+
+
+
+
