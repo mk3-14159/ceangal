@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'carousel_image_cards.dart';
+import 'get_carousel_cards.dart';
 import 'get_discover_slivers.dart';
 
 
@@ -82,21 +81,7 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
 
                 Expanded( //TOP HORIZONTAL CONTAINER
                   flex: 3,
-                  child: CarouselSlider(
-                    items: [
-                      CarouselCard(),
-                      CarouselCard(),
-                      CarouselCard(),
-                    ],
-                    initialPage: 1,
-                    aspectRatio: 16/9,
-                    autoPlay: false,
-                    viewportFraction: 1.0,
-                    //autoPlayInterval: Duration(seconds: 3),
-                    //autoPlayAnimationDuration: Duration(milliseconds: 800),
-                    enlargeCenterPage: true,
-                    scrollDirection: Axis.horizontal,
-                  ),
+                  child: GetCarousel(),
                 ),
 
                 Expanded( // BOTTOM HORIZONTAL CONTAINER

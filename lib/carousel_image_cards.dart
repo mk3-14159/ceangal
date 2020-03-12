@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CarouselCard extends StatefulWidget{
-  CarouselCard({Key key}) : super (key: key);
+  final String imageUrl;
+  final String groupName;
+  final int memberCount;
+
+  CarouselCard({Key key, this.imageUrl, this.groupName, this.memberCount}) : super (key: key);
 
   @override
   _CarouselCard createState() => _CarouselCard();
@@ -10,7 +14,6 @@ class CarouselCard extends StatefulWidget{
 
 
 class _CarouselCard extends State<CarouselCard> {
-
   @override
   void initState(){
     super.initState();
@@ -24,7 +27,7 @@ class _CarouselCard extends State<CarouselCard> {
         new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/cow_512_6.png"),
+              image: AssetImage(widget.imageUrl),
               fit: BoxFit.fitWidth,
               alignment: Alignment.center,
             ),
@@ -51,7 +54,7 @@ class _CarouselCard extends State<CarouselCard> {
             alignment: Alignment.bottomLeft,
             child: Text.rich(
                 TextSpan(
-                  text: 'International Friends',
+                  text: widget.groupName,
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 20.0,
@@ -61,33 +64,37 @@ class _CarouselCard extends State<CarouselCard> {
             ),
           ),
         ),
-        new Container( //TOP IMAGE TEXT OVERLAY
-          padding: EdgeInsets.fromLTRB(40, 0, 0, 5),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text.rich(
-                TextSpan(
-                  text: '402',
-                  style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.0,
-                    color: Colors.white,
-                  ),
-                )
-            ),
-          ),
-        ),
+
+
+
         new Container( //TOP IMAGE TEXT OVERLAY
           padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
           child: Align(
             alignment: Alignment.bottomLeft,
-            child: new Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 18.0,
+            child: RichText(
+                text: TextSpan(
+                  children: [
+                    WidgetSpan(
+                      child: Icon(
+                        Icons.person,
+                        size: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                    TextSpan(
+                      text: (widget.memberCount).toString(),
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ]
+                )
             ),
           ),
         ),
+
       ],
     );
   }
