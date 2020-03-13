@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'get_carousel_cards.dart';
 import 'get_discover_slivers.dart';
-
+import 'menu_bar.dart';
 
 void main() => runApp( MyApp());
 
@@ -41,6 +41,7 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: AppBar(
         title: RichText(
             text: TextSpan(
@@ -78,14 +79,31 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(5, 10, 0, 5),
+                    child: RichText(
+                      text: TextSpan(
+                        text: "Active Groups\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 24.0,
+                          color: Colors.grey,
+                          fontFamily: "Roboto",
+                        ),
+                      ),
+                    ),
+                  )
+                ),
 
                 Expanded( //TOP HORIZONTAL CONTAINER
-                  flex: 3,
+                  flex: 5,
                   child: GetCarousel(),
                 ),
 
                 Expanded( // BOTTOM HORIZONTAL CONTAINER
-                    flex: 4,
+                    flex: 7,
                     child: DiscoverSlivers()
                 )
               ]

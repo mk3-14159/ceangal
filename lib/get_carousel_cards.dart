@@ -11,12 +11,6 @@ class GetCarousel extends StatefulWidget{
 
 
 class _GetCarousel extends State<GetCarousel> {
-  int _currentCarouselImg = 0;
-  List imgList = [
-    CarouselCard(imageUrl: "assets/images/cow_512_6.png", groupName: "Larry's Lawnmowers", memberCount: 35),
-    CarouselCard(imageUrl: "assets/images/cow_512_5.png", groupName: "International Friends", memberCount: 402),
-    CarouselCard(imageUrl: "assets/images/cow_512_4.png", groupName: "Daves Dance", memberCount: 78),
-  ];
   @override
   void initState(){
     super.initState();
@@ -25,15 +19,23 @@ class _GetCarousel extends State<GetCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    List carouselItems = [
+      CarouselCard(imageUrl: "assets/images/cow_512_6.png", groupName: "Larry's Lawnmowers", memberCount: 35),
+      CarouselCard(imageUrl: "assets/images/cow_512_5.png", groupName: "International Friends", memberCount: 402),
+      CarouselCard(imageUrl: "assets/images/cow_512_4.png", groupName: "Daves Dance", memberCount: 78),
+    ];
+    int currentCarouselImg = 0;
+
+
     /*return Stack(
         children: [
           CarouselSlider(
             items: child,
             autoPlay: true,
             aspectRatio: 2.0,
-            onPageChangedCallback: (index) {
+            onPageChanged: (index) {
               setState(() {
-                _currentCarouselImg = index;
+                currentCarouselImg = index;
               });
             },
           ),
@@ -43,25 +45,30 @@ class _GetCarousel extends State<GetCarousel> {
               right: 0.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: map<Widget>(imgList, (index, url) {
+                children:  map<Widget>(carouselItems, (index) {
                   return Container(
                     width: 8.0,
                     height: 8.0,
                     margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: _currentCarouselImg == index ? Color.fromRGBO(0, 0, 0, 0.9) : Color.fromRGBO(0, 0, 0, 0.4)
+                        color: currentCarouselImg == index ? Color.fromRGBO(0, 0, 0, 0.9) : Color.fromRGBO(0, 0, 0, 0.4)
                     ),
                   );
                 }),
               )
-          )
+            )
         ]
     );*/
 
-    return Stack(
-      children: [
-        CarouselSlider(
+    return Card(
+      elevation: 5.0,
+      semanticContainer: true,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0),
+      ),
+      child: CarouselSlider(
         items: [
           CarouselCard(imageUrl: "assets/images/cow_512_6.png", groupName: "Larry's Lawnmowers", memberCount: 35),
           CarouselCard(imageUrl: "assets/images/cow_512_5.png", groupName: "International Friends", memberCount: 402),
@@ -73,9 +80,10 @@ class _GetCarousel extends State<GetCarousel> {
         viewportFraction: 1.0,
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
-        ),
-
-      ],
+      ),
     );
+
+
+
   }
 }
