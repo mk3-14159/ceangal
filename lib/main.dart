@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'get_carousel_cards.dart';
 import 'get_discover_slivers.dart';
 import 'menu_bar.dart';
+import 'navigation_bar.dart';
 
 void main() => runApp( MyApp());
 
@@ -27,16 +28,7 @@ class CeangalSocialWidget extends StatefulWidget{
 
 
 
-
-
 class _CeangalSocialWidget extends State<CeangalSocialWidget> {
-  int _selectedIndex = 2;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,35 +103,7 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
       ),
 
 
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text('Dating'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Social'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text('Profile'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            title: Text('Coupons'),
-          ),
-
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-        type : BottomNavigationBarType.fixed,
-      ),
+      bottomNavigationBar: NavBar(),
 
 
 

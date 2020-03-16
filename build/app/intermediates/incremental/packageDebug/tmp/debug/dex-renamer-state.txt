@@ -1,4 +1,4 @@
-#Fri Mar 13 18:57:40 GMT 2020
+#Sun Mar 15 17:57:54 GMT 2020
 base.0=S\:\\Projects\\ceangal\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
