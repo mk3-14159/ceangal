@@ -1,2 +1,0 @@
-# ceangal
-ceangal_prototype 
