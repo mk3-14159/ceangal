@@ -34,38 +34,41 @@ class _GroupCard extends State<GroupCard> {
             Image.asset(widget.imageUrl),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
-              child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "${widget.groupName}\n",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14.0,
-                        color: Colors.black,
-                        fontFamily: "Roboto",
+              child: SizedBox(
+                height: 30.0,
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "${widget.groupName}\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14.0,
+                          color: Colors.black,
+                          fontFamily: "Roboto",
+                        ),
                       ),
-                    ),
-                    WidgetSpan(
-                      child: Icon(
-                        Icons.person,
-                        size: 16,
-                        color: Colors.grey,
+                      WidgetSpan(
+                        child: Icon(
+                          Icons.person,
+                          size: 16,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: "${(widget.currentMembers).toString()} / ${(widget.maxMembers).toString()}",
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.0,
-                        color: Colors.grey,
+                      TextSpan(
+                        text: "${(widget.currentMembers).toString()} / ${(widget.maxMembers).toString()}",
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14.0,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                  ],
-                  style: TextStyle(
-                    fontFamily: "Roboto",
+                    ],
+                    style: TextStyle(
+                      fontFamily: "Roboto",
+                    )
                   )
-                )
+                ),
               ),
             ),
           ],

@@ -27,7 +27,7 @@ class _DiscoverSlivers extends State<DiscoverSlivers> {
                   maxCrossAxisExtent: 200.0,
                   mainAxisSpacing: 5.0,
                   crossAxisSpacing: 5.0,
-                  childAspectRatio: 0.80,
+                  childAspectRatio: 0.78,
                 ),
                 delegate: SliverChildListDelegate(
                     [

@@ -1,8 +1,12 @@
+import 'package:com/main_dating.dart';
+import 'package:com/main_profile.dart';
 import 'package:flutter/material.dart';
-import 'main_coupons.dart';
-import 'main_social.dart';
-import 'menu_bar.dart';
+import 'package:com/main_coupons.dart';
+import 'package:com/main_social.dart';
+import 'package:com/main_likes.dart';
+import 'package:com/menu_bar.dart';
 
+import 'login_pages/login.dart';
 
 
 
@@ -11,7 +15,6 @@ import 'menu_bar.dart';
 void main() => runApp( MyApp());
 
 class MyApp extends StatelessWidget{
-  static const String _title = 'Ceangal NUIG';
 
   @override
   Widget build(BuildContext context){
@@ -38,11 +41,12 @@ class _Controller extends State<Controller> {
 
   int _selectedIndex = 2;
   final List<Widget> _pages = [
+    DatingPage(),
+    LikesPage(),
+    SocialPage(),
+    ProfilePage(),
     CouponsPage(),
-    CouponsPage(),
-    CeangalSocialWidget(),
-    CouponsPage(),
-    CouponsPage()
+    LoginPage(),
   ];
 
 
@@ -52,29 +56,32 @@ class _Controller extends State<Controller> {
         drawer: NavDrawer(),
 
         appBar: AppBar(
-          title: RichText(
-              text: TextSpan(
-                  style: TextStyle(
-                    height: 1, fontSize: 40,
-                  ),
-                  children : [
-                    TextSpan(
-                      text: "Ceangal ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                      ),
+          title: FittedBox(
+            fit: BoxFit.fitWidth,
+            child: RichText(
+                text: TextSpan(
+                    style: TextStyle(
+                      height: 1, fontSize: 40,
                     ),
-                    TextSpan(
-                        text: "NUIG",
+                    children : [
+                      TextSpan(
+                        text: "Ceangal ",
                         style: TextStyle(
-                          color: const Color(0xFFFF0088),
+                          color: Colors.white,
                           fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.bold,)
-                    ),
-                  ]
-              )
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                          text: "NUIG",
+                          style: TextStyle(
+                            color: const Color(0xFFFF0088),
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold,)
+                      ),
+                    ]
+                )
+            ),
           ),
           centerTitle: true,
           backgroundColor: const Color(0xFF16E3B7),
@@ -89,11 +96,11 @@ class _Controller extends State<Controller> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            title: Text('Dating'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            title: Text('Dating'),
+            title: Text('Likes'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
@@ -106,6 +113,10 @@ class _Controller extends State<Controller> {
           BottomNavigationBarItem(
             icon: Icon(Icons.attach_money),
             title: Text('Coupons'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            title: Text('login'),
           ),
 
         ],

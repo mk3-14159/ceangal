@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'menu_bar.dart';
 import 'social/get_carousel.dart';
 import 'social/get_groups.dart';
 
-class CeangalSocialWidget extends StatefulWidget{
-  CeangalSocialWidget({Key key}) : super (key: key);
+class SocialPage extends StatefulWidget{
+  SocialPage({Key key}) : super (key: key);
   @override
-  _CeangalSocialWidget createState() => _CeangalSocialWidget();
+  _SocialPage createState() => _SocialPage();
 }
 
 
 
 
-class _CeangalSocialWidget extends State<CeangalSocialWidget> {
+class _SocialPage extends State<SocialPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +24,7 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(5, 10, 0, 5),
+                  child: Container(
                     child: RichText(
                       text: TextSpan(
                         text: "Active Groups\n",
@@ -38,7 +36,7 @@ class _CeangalSocialWidget extends State<CeangalSocialWidget> {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ),
 
                 Expanded( //TOP HORIZONTAL CONTAINER

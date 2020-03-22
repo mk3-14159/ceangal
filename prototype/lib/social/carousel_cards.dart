@@ -71,26 +71,29 @@ class _CarouselCard extends State<CarouselCard> {
           padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
           child: Align(
             alignment: Alignment.bottomLeft,
-            child: RichText(
-                text: TextSpan(
-                  children: [
-                    WidgetSpan(
-                      child: Icon(
-                        Icons.person,
-                        size: 16,
-                        color: Colors.white,
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: RichText(
+                  text: TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: Icon(
+                          Icons.person,
+                          size: 16,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: (widget.memberCount).toString(),
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.0,
-                        color: Colors.white,
+                      TextSpan(
+                        text: (widget.memberCount).toString(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14.0,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ]
-                )
+                    ]
+                  )
+              ),
             ),
           ),
         ),

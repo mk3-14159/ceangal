@@ -40,27 +40,30 @@ class _CouponCard extends State<CouponCard> {
             new Container(
               margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
               alignment: Alignment.topLeft,
-              child: Text.rich(
-                TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "${widget.businessName}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
-                          color: Colors.black,
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text.rich(
+                  TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "${widget.businessName}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: "\n${widget.descriptionFood} - ${widget.descriptionCuisine} - ${widget.descriptionHours} - ${widget.descriptionAddress}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12.0,
-                          color: Colors.black,
+                        TextSpan(
+                          text: "\n${widget.descriptionFood} - ${widget.descriptionCuisine} - ${widget.descriptionHours} - ${widget.descriptionAddress}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12.0,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
 
-                    ]
+                      ]
+                  ),
                 ),
               ),
             ),
@@ -78,31 +81,35 @@ class _CouponCard extends State<CouponCard> {
                 shape: BoxShape.circle,
                 color: Colors.white
             ),
-            child: Container(
-              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-              child: Text.rich(
-                TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "${widget.discountValue}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
-                          color: Colors.black,
+            child: SizedBox(
+              width: 20,
+              height: 10,
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text.rich(
+                  TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "${widget.discountValue}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24.0,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: "\nPROMO",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14.0,
-                          color: Colors.black,
+                        TextSpan(
+                          text: "\nPROMO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.0,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
 
-                    ]
+                      ]
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),
