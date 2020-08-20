@@ -40,17 +40,26 @@
 
 ![User Customization](assets/mockupassetv2/andrew_no_photo.png)
 
+![User Customization](assets/mockupassetv2/andrew_other_See.png)
+
+![User Customization](assets/mockupassetv2/andrew_photo_loaded.png)
+
 ---
 
 ---
 ## _story 3 - Ceangal Social Landing Page_
 > Demonstrate event group and social group functionality 
-> - Event Group Chat
-> - Social Group Chat 
 
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
----
+> - Social Feed
+![User Customization](assets/mockupassetv2/Ceangal_social.png)
+
+> - Event Group Chat
+![User Customization](assets/mockupassetv2/Electric_tonight.png)
+
+> - Social Group Chat 
+![User Customization](assets/mockupassetv2/LGBTQ_chat.png)
+
+
 
 ---
 ## _story 4 - Ceangal Dating Landing Page_ 
