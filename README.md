@@ -58,6 +58,7 @@
 
 > - Social Group Chat 
 ![User Customization](assets/mockupassetv2/LGBTQ_chat.png)
+![User Customization](assets/mockupassetv2/group_event_notification.png)
 
 
 
@@ -65,16 +66,33 @@
 ## _story 4 - Ceangal Dating Landing Page_ 
 > animations
 
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
+> - Dating feed
+![User Customization](assets/mockupassetv2/dating_feed.png)
+![User Customization](assets/mockupassetv2/ji_eun_active.png)
+![User Customization](assets/mockupassetv2/likes_page.png)
+
+> - dating chat
+![User Customization](assets/mockupassetv2/Andrew_pov_chat.png)
+![User Customization](assets/mockupassetv2/Grace_pov_chat.png)
+
+> - It's a date
+![User Customization](assets/mockupassetv2/its_a_date.png)
+
 ---
 
 ---
 ## _story 5 - Ceangal Business Navigation_ 
 > animations
 
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
----
+> - promotion grace date
+![User Customization](assets/mockupassetv2/promo_grace.png)
+
+> - electric deal
+![User Customization](assets/mockupassetv2/electricqr.png)
+
+> -  deals
+![User Customization](assets/mockupassetv2/deal_page.png)
+
+> - 
 
 
