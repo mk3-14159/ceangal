@@ -1,5 +1,6 @@
 # specification for the ceangal prototype pitch
 
+> https://docs.google.com/presentation/d/1nm-68yOj9JX6RYOaW_s3gv73AHlT_RuMadY_QPhiego/edit?usp=sharing
 ---
 ## _story 1 -  Signup Process_
 ### 1.1
