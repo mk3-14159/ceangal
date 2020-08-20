@@ -38,8 +38,7 @@
 ## _story 2 - User Customization_
 > Demonstrate the appeal of customizing the user's profile, showcase personalization, and the attractiveness of the user (no camera feature, select from camera roll)
 
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
-[myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
+![User Customization](assets/mockupassetv2/andrew_no_photo.png)
 
 ---
 
